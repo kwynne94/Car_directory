@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0">
+        <meta name="viewport" content="maximum-scale=1.0">
+        <meta name="viewport" content="user-scalable=no">
+        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <title>CarSearch</title>
+        <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+        <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="container">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/pages/index">Home</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav left">
+          <li><a href="/pages/under_nineteen">15,000<</a></li>
+          <li><a href="/pages/under_twentyfive">20,000<</a></li>
+          <li><a href="/pages/under_thirty">25,000<</a></li>
+          <li><a href="/pages/under_thirtyfive">30,000<</a></li>
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right">
+
+          <li>
+
+              <%= form_tag root_path, method: :get, class: "search_box" do %>
+                <%= text_field_tag :qs, params[:qs] %>
+                <%= submit_tag "Search Brand" %>
+              <%end%>
+
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+  </div>
+  </nav>
+  <div class="front-pic">
+    <p class="text_front">Get your Vehicles here, We do in house financing!!!<p>
+
+    <p class="text_front">Locate our dealerships through out Texas! Houston, Dallas, El Paso, and Amarillo<p>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <footer>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+          <div class="container">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav left">
+            <li><a href="#">About</a></li>
+            <li><a href='#' class="bottom">Contact</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+
+    </div>
+    </nav>
+      </div>
+</nav>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+    <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.brand %></td>
+      <td><%= car.name %></td>
+      <td><%= car.price %></td>
+      <td><%= image_tag car.photo_url, class: 'thumb' %></td>
+    </tr>
+    <%end%>
+  <tbody>
+  </tbody>
+</table>
+
+<%= paginate @cars %>

@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-2">
+
+    <span class="aside-box">Type  </span>
+    <div class="line-behind-text"></div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="blankCheckbox" value="option1"><span class="checkbox-word">Car</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="blankCheckbox" value="option1"><span class="checkbox-word">SUV</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="blankCheckbox" value="option1"><span class="checkbox-word">Truck</span>
+          </label>
+        </div>
+
+    <span class="aside-box">Body Stype</span>
+    <div class="line-behind-text"></div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="blankCheckbox" value="option1"><span class="checkbox-word">Sedan</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="blankCheckbox" value="option1"><span class="checkbox-word">Convertible</span>
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="blankCheckbox" value="option1"><span class="checkbox-word">Couple</span>
+          </label>
+        </div>
+
+
+  </div>
+
+
+
+
+
+  <div class="col-md-10">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Milage</th>
+            <th>Price</th>
+            <th>Photo</th>
+          </tr>
+        </thead>
+          <% @cars.each do |car| %>
+          <tr>
+            <td><%= car.brand %></td>
+            <td><%= car.name %></td>
+            <td><%= car.price %></td>
+            <td><%= image_tag car.photo_url, class: 'thumb' %></td>
+          </tr>
+          <%end%>
+        <tbody>
+        </tbody>
+      </table>
+
+      <%= paginate @cars %>
+  </div>
+</div>
